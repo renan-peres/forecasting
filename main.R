@@ -1,0 +1,5 @@
+install.packages(c("tidyverse", "janitor", "forecast", "DT"))
+library(tidyverse)
+library(janitor)
+library(forecast)
+library(DT)
