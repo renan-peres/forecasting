@@ -10,6 +10,7 @@ library(janitor)
 library(forecast)
 library(DT)
 library(rvest)
+library(lubridate)
 knitr::opts_chunk$set(fig.width = unit(20, "cm"), fig.height = unit(10, "cm"))
 # 1_IMPORT ---------------------------------------------------------------------
 

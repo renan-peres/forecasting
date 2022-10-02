@@ -28,6 +28,7 @@ df %>%
   mutate_all(parse_guess) -> df
 
 # 3_PREPARE --------------------------------------------------------------------
+DT::da
 
 df %>% 
   arrange(desc(pop_2020)) %>% 
@@ -54,7 +55,6 @@ df %>%
   theme(axis.text = element_text(size = 14), 
         plot.title = element_text(size = 20, hjust = .5),
         plot.subtitle = element_text(size = 16, face = "italic", family = "mono", hjust = .5))
-  
   
 
 
