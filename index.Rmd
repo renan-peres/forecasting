@@ -11,6 +11,8 @@ library(forecast)
 library(DT)
 library(rvest)
 library(lubridate)
+library(scales)
+
 knitr::opts_chunk$set(fig.width = unit(20, "cm"), fig.height = unit(10, "cm"))
 # 1_IMPORT ---------------------------------------------------------------------
 
@@ -33,6 +35,7 @@ df %>%
   mutate_all(parse_guess) -> df
 
 ```
+
 #### This data was taken from [Worldometers](<https://www.worldometers.info/world-population/population-by-country/>).
 
 # Top 20 Countries
@@ -49,9 +52,10 @@ df %>%
   head(20) -> df_20
 
 df_20 %>% 
-  mutate(world_share = world_share/100) -> df_20
+  mutate(pop_2020 = scales::comma(pop_2020),
+         world_share = world_share/100) -> df_20_table
 
-datatable(df_20, 
+datatable(df_20_table, 
           extensions = c('Responsive','Buttons'), options = list(
             pageLength = 20)) %>% 
   DT::formatPercentage("world_share",2)
